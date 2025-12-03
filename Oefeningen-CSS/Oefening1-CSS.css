@@ -1,0 +1,12 @@
+.highlighted {
+  background-color: yellow;
+}
+
+.important {
+  font-weight: bold;
+  color: black;
+}
+
+p.important {
+  color: red;
+}

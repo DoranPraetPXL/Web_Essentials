@@ -1,0 +1,23 @@
+* {
+  /* padding: 0;
+  margin: 0; */
+  box-sizing: border-box;
+}
+
+.flex-container {
+  display: flex;
+}
+
+.flex-item {
+  width: 200px;
+  height: 200px;
+  background-color: cadetblue;
+}
+
+.short {
+  height: 150px;
+}
+
+.tall {
+  height: 300px;
+}

@@ -1,0 +1,30 @@
+html {
+  background-color: #d9ddd7;
+  font-style: verdana sans-serif;
+}
+
+h1 {
+  color: rgb(4, 133, 4);
+}
+
+p {
+  background-color: #6a7689;
+  color: #ffffff;
+  padding: 20px;
+}
+
+.highlight {
+  color: yellow;
+  border: 2px solid yellow;
+  margin-right: 20%;
+  margin-left: 20%;
+  text-align: center;
+}
+
+a {
+  color: #ffffff;
+}
+
+a:hover {
+  color: #6df469;
+}

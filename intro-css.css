@@ -1,0 +1,74 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: red;
+}
+
+.bold {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* ID 100 WEIGHT, CLASS 10 DUS ID OVERSCHRIJFT DE CLASS STYLING */
+
+#first-paragraph {
+  text-decoration: underline;
+}
+
+.green {
+  color: darkgreen;
+}
+
+p.green {
+  background-color: lightgreen;
+}
+
+/* 
+div p {
+} */
+
+/* 
+SELECTEERD ENKEL 1 NIVEAU
+
+div > p{} */
+
+div + p {
+  background-color: lightyellow;
+}
+
+img[alt*="dino"] {
+  color: black;
+}
+
+/* Wanneer de link nog niet bezocht is */
+a:link {
+  color: lightslategray;
+}
+
+/* Wanneer de link gehovered wordt */
+a:hover {
+  color: red;
+  background-color: orange;
+}
+
+/* Wanneer de link aangeklikt wordt */
+a:active {
+  background-color: black;
+  color: orange;
+}
+
+/* Wanneer de link bezocht is */
+a:visited {
+  background-color: blue;
+  color: green;
+}
+
+/* .product-card p {
+}
+
+.product-card > .product-card__title {
+} */

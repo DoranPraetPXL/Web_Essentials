@@ -1,0 +1,32 @@
+html {
+  background-color: #f1ebd9;
+  font-style: Roboto, sans-serif;
+}
+
+.titlecolor {
+  color: #740001;
+}
+
+.firstsection {
+  background-color: #dcc066;
+  border: 5px solid #740001;
+  padding: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.secondsection {
+  background-color: #dcc066;
+  border: 5px solid #740001;
+  padding: 30px;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.video {
+  width: 100%;
+  height: 40vh;
+}

@@ -1,0 +1,55 @@
+* {
+  /* padding: 0;
+  margin: 0; */
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ff4600; /* fel oranje achtergrond */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.box {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+/* Elke box krijgt een andere z-index en positie */
+.box1 {
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.box2 {
+  top: -120px;
+  left: 40px;
+  z-index: 2;
+}
+
+.box3 {
+  top: -240px;
+  left: 80px;
+  z-index: 3;
+}
+
+.box4 {
+  top: -360px;
+  left: 120px;
+  z-index: 4;
+}

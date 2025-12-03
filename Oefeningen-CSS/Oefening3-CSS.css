@@ -1,0 +1,45 @@
+a:link[href$=".com"] {
+  color: blue;
+  border: 2px solid;
+  border-color: blue;
+}
+
+a:link[href^="https://"]
+{
+  color: green;
+  border: 2px solid;
+  border-color: green;
+}
+
+a:link {
+  color: green;
+}
+
+a:visited {
+  color: pink;
+}
+
+a:hover {
+  color: darkorange;
+}
+
+/* Stijl voor het eerste child van een selector */
+ul li:first-child {
+  font-weight: bold;
+}
+/* Stijl voor het laatste child van een selector */
+ul li:last-child {
+  font-style: italic;
+}
+/* Stijl voor alle oneven childs van een selector */
+ul li:nth-child(odd) {
+  background-color: lightgrey;
+}
+/* Stijl voor alle even children van een selector */
+ul li:nth-child(even) {
+  background-color: lightskyblue;
+}
+/* Stijl voor het derde child van een selector */
+/* ul li:nth-child(3) {
+  text-decoration: underline;
+} */
