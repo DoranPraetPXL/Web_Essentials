@@ -1,0 +1,398 @@
+/* ===== REBOOT ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Tahoma, sans-serif;
+}
+
+body {
+  background: #edf2f4;
+  color: #030303;
+}
+
+/* ===== PAGE GRID ===== */
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "banner banner"
+    "nav main"
+    "footer footer";
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  grid-area: header;
+  height: 20rem;
+  background-image: url("assets/header.webp");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-title {
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 7rem;
+  text-align: center;
+  color: #5f79a0;
+  padding: 0.5rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.site-title .light {
+  color: #edf2f4;
+}
+
+/* ===== BANNER ===== */
+.banner {
+  grid-area: banner;
+  background: #030303;
+  color: #edf2f4;
+  text-align: center;
+  padding: 1.5rem;
+}
+
+.banner-link {
+  color: #5f79a0;
+  text-decoration: none;
+}
+
+/* ===== NAV ===== */
+.sidebar {
+  grid-area: nav;
+  background: #5f79a0;
+  padding: 2rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-link {
+  display: block;
+  color: #edf2f4;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.nav-link:hover {
+  background: #edf2f4;
+  color: #030303;
+}
+
+/* ===== MAIN ===== */
+.content {
+  grid-area: main;
+  padding: 2rem;
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+.section h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* ===== CLUB ===== */
+.club p,
+.club li {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.club h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.club ul {
+  list-style-position: inside;
+}
+
+/* ===== SPELERS ===== */
+.player-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.player-card {
+  border: 2px solid #5f79a0;
+  border-radius: 1rem;
+  box-shadow: 4px 4px 4px #5f79a0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+
+.player-name {
+  font-size: 2rem;
+  color: #5f79a0;
+  text-align: center;
+}
+
+.player-body {
+  width: 100%;
+  position: relative;
+}
+
+.player-body img {
+  width: 100%;
+  padding: 1rem;
+  display: block;
+}
+
+.player-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  font-weight: bold;
+  color: #5f79a0;
+}
+
+.player-description {
+  font-style: italic;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+/* ===== KLASSEMENT (tabel) ===== */
+.ranking-table,
+.ranking-table th,
+.ranking-table td {
+  border: 1px solid #000;
+  border-collapse: collapse;
+}
+
+.ranking-table {
+  width: 100%;
+  max-width: 720px;
+}
+
+.ranking-table th,
+.ranking-table td {
+  padding: 8px;
+  text-align: center;
+}
+
+.ranking-table tbody td:nth-child(2),
+.ranking-table tfoot td {
+  text-align: left;
+}
+
+.ranking-table thead tr {
+  background: #5f79a0;
+  color: #edf2f4;
+  font-variant: all-petite-caps;
+}
+
+.ranking-table tbody tr:first-child {
+  background: #2fbf7160;
+}
+
+.ranking-table tbody tr:nth-child(4),
+.ranking-table tbody tr:nth-child(5) {
+  background: #bd6b7360;
+}
+
+.ranking-table tbody tr:nth-child(2) td:nth-child(4) {
+  background: #2fbf71;
+}
+
+.ranking-table tbody tr:nth-child(4) td:nth-child(5) {
+  background: #bd6b73;
+}
+
+.ranking-table tfoot tr:first-child {
+  background: #2fbf71;
+}
+
+.ranking-table tfoot tr:last-child {
+  background: #bd6b73;
+}
+
+.ranking-table caption {
+  caption-side: bottom;
+  font-weight: bold;
+  padding: 16px;
+}
+
+/* ===== CONTACT (formulier) ===== */
+.contact-form {
+  margin: 2rem 0;
+  padding: 1rem;
+  max-width: 35rem;
+  border: 1px solid #5f79a0;
+  border-radius: 0.5rem;
+}
+
+.req {
+  color: #bd6b73;
+}
+
+.contact-form label {
+  display: block;
+}
+
+.contact-form input,
+.contact-form select {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  border: 1px solid #030303;
+}
+
+.contact-form fieldset {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  border: 1px solid #030303;
+}
+
+.contact-form legend {
+  padding: 0 0.5rem;
+}
+
+.cb {
+  display: block;
+}
+
+.cb input {
+  width: auto;
+  margin: 0.5rem 0 0.5rem 1rem;
+}
+
+/* knoppen */
+.btn {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.4rem;
+  border: 1px solid #030303;
+  margin-top: 1rem;
+}
+
+.primary {
+  background: #5f79a0;
+  color: #edf2f4;
+}
+
+.danger {
+  background: #bd6b73;
+  color: #edf2f4;
+}
+
+.btn:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ===== FOOTER ===== */
+.site-footer {
+  grid-area: footer;
+  position: relative;
+  background: #030303;
+  color: #edf2f4;
+  padding: 1.5rem;
+  text-align: right;
+}
+
+.to-top {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -50%);
+}
+
+.to-top img {
+  width: 6rem;
+  display: block;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 80rem) {
+  .page {
+    grid-template-columns: 1fr 3fr;
+  }
+
+  .player-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 64rem) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "banner"
+      "header"
+      "nav"
+      "main"
+      "footer";
+  }
+
+  .sidebar {
+    padding: 0;
+  }
+
+  .nav-list {
+    flex-direction: row;
+  }
+
+  .nav-link {
+    width: 25%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 48rem) {
+  .banner {
+    display: none;
+  }
+
+  .player-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 30rem) {
+  .player-list {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-list {
+    flex-direction: column;
+  }
+
+  .nav-link {
+    width: 100%;
+  }
+
+  .player-body img {
+    padding: 3rem;
+  }
+
+  .player-number {
+    font-size: 6rem;
+  }
+}
