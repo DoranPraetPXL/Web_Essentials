@@ -14,29 +14,23 @@ body {
   color: #030303;
 }
 
-/* ===== PAGE GRID ===== */
+/* ===== PAGE (FLEX) ===== */
 .page {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  grid-template-rows: auto auto 1fr auto;
-  grid-template-areas:
-    "header header"
-    "banner banner"
-    "nav main"
-    "footer footer";
+  display: flex;
+  flex-direction: column;
 }
 
 /* ===== HEADER ===== */
 .site-header {
-  grid-area: header;
   height: 20rem;
   background-image: url("assets/header.webp");
   background-size: cover;
   background-position: center;
+
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .site-title {
@@ -54,7 +48,6 @@ body {
 
 /* ===== BANNER ===== */
 .banner {
-  grid-area: banner;
   background: #030303;
   color: #edf2f4;
   text-align: center;
@@ -66,11 +59,17 @@ body {
   text-decoration: none;
 }
 
+/* ===== LAYOUT (NAV + MAIN) ===== */
+.layout {
+  display: flex;
+  flex: 1;
+}
+
 /* ===== NAV ===== */
 .sidebar {
-  grid-area: nav;
   background: #5f79a0;
   padding: 2rem;
+  width: 20%;
 }
 
 .nav-list {
@@ -94,8 +93,8 @@ body {
 
 /* ===== MAIN ===== */
 .content {
-  grid-area: main;
   padding: 2rem;
+  width: 80%;
 }
 
 .section {
@@ -125,8 +124,8 @@ body {
 
 /* ===== SPELERS ===== */
 .player-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
 }
 
@@ -134,11 +133,15 @@ body {
   border: 2px solid #5f79a0;
   border-radius: 1rem;
   box-shadow: 4px 4px 4px #5f79a0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;
   padding: 1rem;
+
+  /* 4 per rij op desktop zonder calc: gewoon percentage */
+  width: 23%;
 }
 
 .player-name {
@@ -159,10 +162,20 @@ body {
 }
 
 .player-number {
+  /* centreren zonder transform: absolute + offsets + negatieve margins */
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+
+  width: 4rem;
+  height: 4rem;
+  margin-left: -2rem;
+  margin-top: -2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   font-size: 4rem;
   font-weight: bold;
   color: #5f79a0;
@@ -309,19 +322,21 @@ body {
 
 /* ===== FOOTER ===== */
 .site-footer {
-  grid-area: footer;
   position: relative;
   background: #030303;
   color: #edf2f4;
-  padding: 1.5rem;
+  padding: 2rem;
   text-align: right;
 }
 
+/* balletje “boven” de footer zetten zonder transform */
 .to-top {
   position: absolute;
+  top: -3rem;
   left: 50%;
-  top: 0;
-  transform: translate(-50%, -50%);
+  width: 6rem;
+  height: 6rem;
+  margin-left: -3rem;
 }
 
 .to-top img {
@@ -331,24 +346,28 @@ body {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 80rem) {
-  .page {
-    grid-template-columns: 1fr 3fr;
+  .sidebar {
+    width: 25%;
   }
 
-  .player-list {
-    grid-template-columns: repeat(3, 1fr);
+  .content {
+    width: 75%;
+  }
+
+  /* 3 per rij */
+  .player-card {
+    width: 30%;
   }
 }
 
 @media (max-width: 64rem) {
-  .page {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "banner"
-      "header"
-      "nav"
-      "main"
-      "footer";
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar,
+  .content {
+    width: 100%;
   }
 
   .sidebar {
@@ -363,6 +382,11 @@ body {
     width: 25%;
     text-align: center;
   }
+
+  /* 2 per rij */
+  .player-card {
+    width: 47%;
+  }
 }
 
 @media (max-width: 48rem) {
@@ -370,21 +394,23 @@ body {
     display: none;
   }
 
-  .player-list {
-    grid-template-columns: repeat(2, 1fr);
+  /* 2 per rij blijft ok */
+  .player-card {
+    width: 47%;
   }
 }
 
 @media (max-width: 30rem) {
-  .player-list {
-    grid-template-columns: 1fr;
-  }
-
   .nav-list {
     flex-direction: column;
   }
 
   .nav-link {
+    width: 100%;
+  }
+
+  /* 1 per rij */
+  .player-card {
     width: 100%;
   }
 
@@ -394,5 +420,9 @@ body {
 
   .player-number {
     font-size: 6rem;
+    width: 6rem;
+    height: 6rem;
+    margin-left: -3rem;
+    margin-top: -3rem;
   }
 }
